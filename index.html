@@ -183,6 +183,7 @@
             font-size: 2rem;
             color: var(--deep-pink);
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .letter-content {
@@ -220,6 +221,14 @@
         }
 
         .letter-nav {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .reasons-nav {
             display: flex;
             gap: 15px;
             justify-content: center;
@@ -351,43 +360,6 @@
             flex-wrap: wrap;
         }
 
-        .reasons-container {
-            width: 100%;
-            overflow-y: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .reason-item {
-            background: url('beige-texture.jpg') repeat, var(--soft-pink);
-            border: 2px solid var(--deep-pink);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            font-size: 1rem;
-            color: var(--neutral-gray);
-            font-family: 'Dancing Script', cursive;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .reason-item:nth-child(1) { animation-delay: 0.2s; }
-        .reason-item:nth-child(2) { animation-delay: 0.3s; }
-        .reason-item:nth-child(3) { animation-delay: 0.4s; }
-        .reason-item:nth-child(4) { animation-delay: 0.5s; }
-        .reason-item:nth-child(n+5) { animation-delay: calc(0.6s + (0.02s * (n - 5))); }
-
-        .reasons-nav {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
         .cake-container {
             position: relative;
             display: flex;
@@ -510,7 +482,6 @@
             .container { max-width: 100%; }
             .song-item { padding: 8px 0; }
             .song-art { width: 32px; height: 32px; }
-            .reasons-container { grid-template-columns: 1fr; }
             .cake-image { max-width: 300px; }
             .flower { width: 40px; }
             .flower.top-left { top: -15px; left: -15px; }
@@ -536,7 +507,7 @@
             <div class="nav-buttons">
                 <button class="nav-btn" onclick="showPage('letter')">Letter</button>
                 <button class="nav-btn" onclick="showPage('playlist')">Playlist</button>
-                <button class="nav-btn" onclick="showPage('greetings')">Reasons</button>
+                <button class="nav-btn" onclick="showPage('greetings')">You, My Constant</button>
                 <button class="nav-btn" onclick="showPage('cake')">Cake</button>
             </div>
         </div>
@@ -545,18 +516,16 @@
     <div id="letter" class="page">
         <div class="container">
             <div class="letter-container">
-                <h2 class="letter-header">For My Raya</h2>
+                <h2 class="letter-header">Lagi't lagi</h2>
                 <div class="letter-content">
-                    <p>Happy birthday, my love! I am so proud of everything you’ve done so far. You’ve been strong and caring through everything. You’ve worked hard and never gave up. Even when times are tough, you still keep going. I admire that so much. You’re doing great, believe me. It’s okay to take breaks when you need them, you deserve to rest too. Don’t feel bad about it, it’s important to take care of yourself. You matter so much, and you deserve all the love in the world. I’m really proud of you for how far you’ve come. I’ll never run out of ways to show you how much I love you. You are my everything.</p>
-                    <p>The world can be uncertain, but there is one thing I am sure of: it’s you and me. I feel so lucky to have you in my life. You give me comfort when I need it most. You are my light, my guide, and my peace. Together, we’ve made something beautiful, like stars in the dark sky. I will always cherish how we found each other. You make everything feel okay, no matter how hard life gets. You’re always there for me, and I’m so thankful for that. I feel so safe when I’m with you. You complete my heart in ways I never imagined. No matter what happens, I know I will always be with you. I love you more than words can say.</p>
+                    <p>Happy birthday, my love! I am so proud of everything you’ve done so far. You’ve been strong and caring through everything. You’ve worked hard and never gave up. Even when times are tough, you still keep going. I admire that so much. You’re doing great, believe me. It’s okay to take breaks when you need them, you deserve to rest too. Don’t feel bad about it, it’s important to take care of yourself. You matter so much, and you deserve all the love in the world. I’m really proud of you for how far you’ve come. I’ll never run out of ways to show you how much I love you. You are my everything, and I will never stop loving you.</p>
                     <p>Even though I can’t always find the right words to tell you how much you mean to me, I hope you feel it. You are my love, my home, and my best friend. Every moment with you is special. I want to spend the rest of my life making you feel loved. You are everything I ever wanted and more. I will always be by your side, through good times and bad. I promise to support you no matter what. If the world is being a little mean towards you, please remember that I’m always here for you, okay? You won’t ever find me behind you because I’ll be beside you. That way, you know you can always lean on me as we walk this journey together. I am so proud to love you. Happy birthday again, mahal ko, you deserve all the happiness.</p>
                 </div>
-                <div class="signature">With all my heart,<br>Dric</br></div>
             </div>
             <div class="letter-nav">
                 <button class="nav-btn" onclick="showPage('home')">Home</button>
                 <button class="nav-btn" onclick="showPage('playlist')">Playlist</button>
-                <button class="nav-btn" onclick="showPage('greetings')">Reasons</button>
+                <button class="nav-btn" onclick="showPage('greetings')">You, My Constant</button>
                 <button class="nav-btn" onclick="showPage('cake')">Cake</button>
             </div>
         </div>
@@ -579,7 +548,8 @@
                         <div class="song-title">keepyousafe</div>
                         <div class="song-artist">Yahya</div>
                     </div>
-                    <a href="https://open.spotify.com/track/7CB8epyUjN9ZbVHTU712ti?si=VClS89wASmGo6xXSuyDnyw" target="_blank">               <button class="spotify-btn">Play</button>
+                    <a href="https://open.spotify.com/track/7CB8epyUjN9ZbVHTU712ti?si=pqj5Z5J6SOGxUJcC7Ti8ug" target="_blank">
+                        <button class="spotify-btn">Play</button>
                     </a>
                     <button class="song-options">⋮</button>
                 </li>
@@ -635,7 +605,7 @@
             <div class="playlist-nav">
                 <button class="nav-btn" onclick="showPage('home')">Home</button>
                 <button class="nav-btn" onclick="showPage('letter')">Letter</button>
-                <button class="nav-btn" onclick="showPage('greetings')">Reasons</button>
+                <button class="nav-btn" onclick="showPage('greetings')">You, My Constant</button>
                 <button class="nav-btn" onclick="showPage('cake')">Cake</button>
             </div>
         </div>
@@ -643,108 +613,16 @@
 
     <div id="greetings" class="page">
         <div class="container">
-            <h2 class="title">100 Reasons Why I Love You</h2>
-            <div class="reasons-container">
-                <div class="reason-item">1. You make me feel loved every day.</div>
-                <div class="reason-item">2. You always believe in me.</div>
-                <div class="reason-item">3. You support me no matter what.</div>
-                <div class="reason-item">4. You understand me even when I can't explain.</div>
-                <div class="reason-item">5. You care about how I feel.</div>
-                <div class="reason-item">6. You make me feel important.</div>
-                <div class="reason-item">7. You’re always kind to others.</div>
-                <div class="reason-item">8. You inspire me to grow.</div>
-                <div class="reason-item">9. You stay even when things are hard.</div>
-                <div class="reason-item">10. You make life feel more meaningful.</div>
-                <div class="reason-item">11. You remind me to keep going.</div>
-                <div class="reason-item">12. You always find ways to make me smile.</div>
-                <div class="reason-item">13. You never give up on us.</div>
-                <div class="reason-item">14. You’re always honest with me.</div>
-                <div class="reason-item">15. You help me become a better person.</div>
-                <div class="reason-item">16. You listen when I need to talk.</div>
-                <div class="reason-item">17. You show me what real love feels like.</div>
-                <div class="reason-item">18. You never judge me.</div>
-                <div class="reason-item">19. You make me feel calm during stressful times.</div>
-                <div class="reason-item">20. You are thoughtful in the little things.</div>
-                <div class="reason-item">21. You stay patient with me.</div>
-                <div class="reason-item">22. You never let me feel alone.</div>
-                <div class="reason-item">23. You help me believe in myself.</div>
-                <div class="reason-item">24. You give me strength to keep going.</div>
-                <div class="reason-item">25. You show kindness, even when it’s not easy.</div>
-                <div class="reason-item">26. You care about my happiness.</div>
-                <div class="reason-item">27. You are brave, even when scared.</div>
-                <div class="reason-item">28. You give me peace just by being there.</div>
-                <div class="reason-item">29. You help me feel safe with my emotions.</div>
-                <div class="reason-item">30. You’re a light when things feel dark.</div>
-                <div class="reason-item">31. You make boring days feel fun.</div>
-                <div class="reason-item">32. You celebrate my small wins.</div>
-                <div class="reason-item">33. You stay even when I don’t say much.</div>
-                <div class="reason-item">34. You give without expecting anything back.</div>
-                <div class="reason-item">35. You are humble and honest.</div>
-                <div class="reason-item">36. You respect me always.</div>
-                <div class="reason-item">37. You make me feel accepted.</div>
-                <div class="reason-item">38. You treat people with respect.</div>
-                <div class="reason-item">39. You help me stay focused on what matters.</div>
-                <div class="reason-item">40. You bring warmth into my life.</div>
-                <div class="reason-item">41. You remind me to take care of myself.</div>
-                <div class="reason-item">42. You always know when I need comfort.</div>
-                <div class="reason-item">43. You are generous with your care.</div>
-                <div class="reason-item">44. You always try your best.</div>
-                <div class="reason-item">45. You have a strong and kind heart.</div>
-                <div class="reason-item">46. You lift me up when I feel low.</div>
-                <div class="reason-item">47. You teach me patience.</div>
-                <div class="reason-item">48. You never let me feel left out.</div>
-                <div class="reason-item">49. You remind me of the good in the world.</div>
-                <div class="reason-item">50. You believe in love deeply.</div>
-                <div class="reason-item">51. You never make me feel like a burden.</div>
-                <div class="reason-item">52. You give your all in everything.</div>
-                <div class="reason-item">53. You are full of wisdom.</div>
-                <div class="reason-item">54. You are true to who you are.</div>
-                <div class="reason-item">55. You are reliable and steady.</div>
-                <div class="reason-item">56. You are creative and thoughtful.</div>
-                <div class="reason-item">57. You always try to understand things fully.</div>
-                <div class="reason-item">58. You trust me with your heart.</div>
-                <div class="reason-item">59. You always find ways to make me feel included.</div>
-                <div class="reason-item">60. You never forget what matters most.</div>
-                <div class="reason-item">61. You make love feel simple and true.</div>
-                <div class="reason-item">62. You are always improving.</div>
-                <div class="reason-item">63. You remind me that it’s okay to rest.</div>
-                <div class="reason-item">64. You bring out the good in people.</div>
-                <div class="reason-item">65. You show love in quiet, real ways.</div>
-                <div class="reason-item">66. You are careful with words.</div>
-                <div class="reason-item">67. You remember the things I like.</div>
-                <div class="reason-item">68. You know how to handle hard moments.</div>
-                <div class="reason-item">69. You remind me that I’m not alone.</div>
-                <div class="reason-item">70. You keep showing up for love.</div>
-                <div class="reason-item">71. You care about doing things right.</div>
-                <div class="reason-item">72. You have a heart that forgives.</div>
-                <div class="reason-item">73. You make me feel proud to know you.</div>
-                <div class="reason-item">74. You give love that stays.</div>
-                <div class="reason-item">75. You are consistent and loyal.</div>
-                <div class="reason-item">76. You take time to understand me.</div>
-                <div class="reason-item">77. You remind me I’m not too much.</div>
-                <div class="reason-item">78. You never make me feel small.</div>
-                <div class="reason-item">79. You help me see good in myself.</div>
-                <div class="reason-item">80. You are careful with promises.</div>
-                <div class="reason-item">81. You notice when I’m not okay.</div>
-                <div class="reason-item">82. You are soft with people’s feelings.</div>
-                <div class="reason-item">83. You stand up for what’s right.</div>
-                <div class="reason-item">84. You teach me about patience and grace.</div>
-                <div class="reason-item">85. You give me hope in love.</div>
-                <div class="reason-item">86. You treat me with care and kindness.</div>
-                <div class="reason-item">87. You never forget to check on me.</div>
-                <div class="reason-item">88. You’re calm in hard situations.</div>
-                <div class="reason-item">89. You never walk away from problems.</div>
-                <div class="reason-item">90. You help me feel like I belong.</div>
-                <div class="reason-item">91. You are honest even when it’s hard.</div>
-                <div class="reason-item">92. You help me stay grounded.</div>
-                <div class="reason-item">93. You remind me of good days ahead.</div>
-                <div class="reason-item">94. You keep love alive in small ways.</div>
-                <div class="reason-item">95. You never let me doubt my worth.</div>
-                <div class="reason-item">96. You’re always thinking of others.</div>
-                <div class="reason-item">97. You lead with your heart.</div>
-                <div class="reason-item">98. You are someone I deeply respect.</div>
-                <div class="reason-item">99. You are everything I didn’t know I needed.</div>
-                <div class="reason-item">100. I love you simply because you're you.</div>
+            <h2 class="title">Where My Heart Found Home</h2>
+            <div class="letter-container">
+                <h2 class="letter-header">To My Raya</h2>
+                <div class="letter-content">
+                    <p>A kind of love that doesn’t need convincing, doesn’t come with conditions, and doesn’t ask for explanations. Loving you has never been a question. It’s always felt natural, like breathing. But if I had to try and explain it, if I had to wrap words around the way I feel about you, I’d start here—with everything you are and everything you’ve been to me.</p>
+                    <p>I love you because somewhere in the middle of all my chaos, you made me feel like I was worth loving. You stepped into my world not to fix me, but to hold my hand through it. I love you because even on the days when I felt like I was falling apart, you didn’t flinch. You didn’t run. You stayed, arms open, heart wide, whispering words I couldn’t believe but needed to hear. You’ve seen me in moments I would never show anyone else, and you chose to love me anyway. That means more than I can ever put into words.</p>
+                    <p>I love you because you have this way of making me feel safe—like no matter how loud the world gets, I can always find peace in your presence. I love you because your love doesn’t just exist in the good moments, but especially in the hard ones. You've held me when I was angry, comforted me when I cried, and never made me feel like a burden even when I was at my lowest. You’ve made me feel like I’m not too much, never too complicated, never too broken. You loved me when I didn’t feel lovable—and that kind of love? It stays. It roots itself deep inside.</p>
+                    <p>I love you because of all the little things too—the small gestures, the quiet care, the patience you show when I can’t explain how I feel. I love you because I can laugh with you, cry with you, be completely silent with you, and still feel understood. I love you because when I picture my future, it’s your face I see beside mine. I love you not just for who you are, but for how being with you makes me feel. You bring out parts of me I thought I lost.</p>
+                    <p>And above all, I love you because I can’t imagine losing you. The thought alone breaks me. You are the home my heart found when it didn’t know where it belonged. You are the reason I believe in love, in healing, in second chances. I may not always find the perfect words, but this love I carry for you? It’s constant. It’s deep. It’s real. And I hope you always feel it, even in the quiet, even in the spaces where words don’t reach.</p>
+                </div>
             </div>
             <div class="reasons-nav">
                 <button class="nav-btn" onclick="showPage('home')">Home</button>
@@ -774,7 +652,7 @@
                 <button class="nav-btn" onclick="showPage('home')">Home</button>
                 <button class="nav-btn" onclick="showPage('letter')">Letter</button>
                 <button class="nav-btn" onclick="showPage('playlist')">Playlist</button>
-                <button class="nav-btn" onclick="showPage('greetings')">Reasons</button>
+                <button class="nav-btn" onclick="showPage('greetings')">You, My Constant</button>
             </div>
         </div>
     </div>
@@ -806,7 +684,7 @@
                 confettiShown[pageId] = true;
             }
 
-            if (pageId === 'letter') {
+            if (pageId === 'letter' || pageId === 'greetings') {
                 const elements = document.querySelectorAll('.letter-content p, .signature');
                 elements.forEach(element => {
                     element.style.animation = 'none';
@@ -818,15 +696,6 @@
             if (pageId === 'playlist') {
                 const songItems = document.querySelectorAll('.song-item');
                 songItems.forEach(item => {
-                    item.style.animation = 'none';
-                    item.offsetHeight;
-                    item.style.animation = null;
-                });
-            }
-
-            if (pageId === 'greetings') {
-                const reasonItems = document.querySelectorAll('.reason-item');
-                reasonItems.forEach(item => {
                     item.style.animation = 'none';
                     item.offsetHeight;
                     item.style.animation = null;
